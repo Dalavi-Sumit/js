@@ -1,0 +1,26 @@
+Index.html  
+<!DOCTYPE html>  
+<html>  
+<head>  
+    <title>Empty Array Elements</title>  
+    <script src="script6.js" defer></script>  
+</head>  
+<body>  
+    <h2>Empty Array Elements</h2>  
+    <!-- Input for array elements -->  
+    <label>Enter Array Elements (comma separated):</label>  
+    <input type="text" id="arrayInput"><br><br>  
+    <button onclick="emptyArrayElements()">Empty Array</button>  
+    <h3>Result:</h3>  
+    <p id="result"></p>  
+</body>  
+</html> 
+
+function emptyArrayElements() {
+  let arrayInput = document.getElementById("arrayInput").value;
+  let arr = arrayInput.split(',').map(item => item.trim());
+
+  arr.length = 0;
+
+  document.getElementById("result").textContent = "Array after emptying: [" + arr + "]";
+}

@@ -1,0 +1,29 @@
+<!DOCTYPE html> 
+<html> 
+<head> 
+    <title>Reverse String Recursively</title> 
+</head> 
+<body> 
+    <h2>Reverse a String Using Recursion</h2> 
+    <label>Enter a string:</label> 
+    <input type="text" id="inputString"><br><br> 
+    <button onclick="reverseString()">Reverse</button> 
+    <h3 id="result"></h3> 
+    <script src="script.js"></script> 
+</body> 
+</html> 
+
+function recursiveReverse(str) { 
+    if (str === "") {         
+        return ""; 
+    } 
+    return recursiveReverse(str.substring(1)) + str.charAt(0); 
+}; // ← added semicolon here
+
+function reverseString() { 
+    let str = document.getElementById("inputString").value;     
+    let length = str.length;     
+    console.log("Length of string:", length); // Optional: for debugging     
+    let reversedStr = recursiveReverse(str);     
+    document.getElementById("result").innerText = "Reversed String: " + reversedStr; 
+}

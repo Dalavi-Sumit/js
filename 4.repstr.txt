@@ -1,0 +1,26 @@
+<!DOCTYPE html> 
+<html> 
+<head> 
+    <title>Replace Substring in String</title> 
+</head> 
+<body> 
+    <h2>Replace a Substring Using JavaScript</h2> 
+    <label>Enter the original string:</label> 
+    <input type="text" id="inputString"><br><br> 
+    <label>Enter the text to replace:</label> 
+    <input type="text" id="matchText"><br><br> 
+    <label>Enter the replacement text:</label> 
+    <input type="text" id="patternText"><br><br> 
+    <button onclick="replaceText()">Replace</button> 
+    <h3 id="result"></h3> 
+    <script src="script2.js"></script> 
+</body> 
+</html> 
+
+function replaceText() {
+    let str = document.getElementById("inputString").value;    
+    let match = document.getElementById("matchText").value;    
+    let pattern = document.getElementById("patternText").value;     
+    let newStr = str.replace(match, pattern);     
+    document.getElementById("result").innerText = "New String: " + newStr; 
+}

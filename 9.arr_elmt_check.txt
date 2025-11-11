@@ -1,0 +1,32 @@
+<!DOCTYPE html>  
+<html>  
+<head>  
+  <title>Check Element in Array</title>  
+  <script src="script5.js" defer></script>  
+</head>  
+<body>  
+  <h2>Check if Element Exists in Array</h2>  
+  <label>Enter Array Elements (comma separated):</label>  
+  <input type="text" id="arrayInput"><br><br>  
+  <label>Enter Element to Check:</label>  
+  <input type="text" id="checkInput"><br><br>  
+  <button onclick="checkArrayElement()">Check Element</button>  
+  <p id="result"></p>  
+</body>  
+</html>  
+
+function checkArrayElement() {
+  let arr = document.getElementById("arrayInput").value.split(",");
+  let element = document.getElementById("checkInput").value.trim();
+
+  // Trim spaces around each array element
+  arr = arr.map(item => item.trim());
+
+  let index = arr.indexOf(element);
+
+  if (index !== -1) {
+    document.getElementById("result").innerHTML = "Element '" + element + "' found at index " + index;
+  } else {
+    document.getElementById("result").innerHTML = "Element Not Found!";
+  }
+}
